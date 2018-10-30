@@ -197,3 +197,17 @@ class Meli(object):
             uri, params=urlencode(params), headers=headers
         )
         return response
+
+
+    def getItemByID(self, item_id, params={}):
+        headers = {
+            'Accept': 'application/json',
+            'User-Agent': self.SDK_VERSION,
+            'Content-type': 'application/json'
+        }
+        uri = self.make_path('items/{0}'.format(item_id))
+        response = self._requests.get(
+            uri, params=urlencode(params), headers=headers
+        )
+        return response
+

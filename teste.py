@@ -29,3 +29,6 @@ print("user_me reponse_code-> {0}".format(user_me))
 print("user_me content-> {0}".format(user_me.content))
 print("user_me text-> {0}".format(user_me.text))
 
+item = meli.getItemByID('MLB1075298550')
+print("item reponse_code-> {0}".format(item))
+print("item content-> {0}".format(item.content))
