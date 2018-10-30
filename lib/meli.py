@@ -185,3 +185,15 @@ class Meli(object):
         if params:
             path = path + "?" + urlencode(params)
         return path
+
+    def me(self, path, params={}):
+        headers = {
+            'Accept': 'application/json',
+            'User-Agent': self.SDK_VERSION,
+            'Content-type': 'application/json'
+        }
+        uri = self.make_path(path)
+        response = self._requests.me(
+            uri, params=urlencode(params), headers=headers
+        )
+        return response
